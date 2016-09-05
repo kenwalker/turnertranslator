@@ -1,0 +1,22 @@
+{
+"manifest_version": 2,
+    "name": "Turner Translator",
+    "description": "Does some page modifications based on certain text and persona",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "TurnerTranslator.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "icons" : {
+        "16" : "justice.png",
+        "48" : "justice.png",
+        "128" : "justice.png"
+    }
+}
