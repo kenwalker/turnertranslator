@@ -2,7 +2,7 @@
 "manifest_version": 2,
     "name": "Turner Translator",
     "description": "Does some page modifications based on certain text and persona",
-    "version": "1.0",
+    "version": "1.1",
     "content_scripts": [
         {
             "matches": [
@@ -11,7 +11,7 @@
             "js": [
                 "TurnerTranslator.js"
             ],
-            "run_at": "document_end"
+            "run_at": "document_idle"
         }
     ],
     "icons" : {

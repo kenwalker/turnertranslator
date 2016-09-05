@@ -28,25 +28,27 @@ var checkCaseThree = function(match) {
 var content = document.body.textContent || document.body.innerText;
 var isBrockTurner = content.toLowerCase().indexOf("brock turner")!==-1;
 
-console.log("isBrockTurner " + isBrockTurner);
+var changeTextOnPage = function() {
 
-if (isBrockTurner) {
-    for (var i = 0; i < elements.length; i++) {
-        var element = elements[i];
+    if (isBrockTurner) {
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
 
-        for (var j = 0; j < element.childNodes.length; j++) {
-            var node = element.childNodes[j];
+            for (var j = 0; j < element.childNodes.length; j++) {
+                var node = element.childNodes[j];
 
-            if (node.nodeType === 3) {
-                var text = node.nodeValue;
-                var replacedText = text.replace(/swimmer/gi, checkCaseOne);
-                var replacedText = replacedText.replace(/swimming/gi, checkCaseTwo);
-                var replacedText = replacedText.replace(/swims/gi, checkCaseThree);
+                if (node.nodeType === 3) {
+                    var text = node.nodeValue;
+                    var replacedText = text.replace(/swimmer/gi, checkCaseOne);
+                    var replacedText = replacedText.replace(/swimming/gi, checkCaseTwo);
+                    var replacedText = replacedText.replace(/swims/gi, checkCaseThree);
 
-                if (replacedText !== text) {
-                    element.replaceChild(document.createTextNode(replacedText), node);
+                    if (replacedText !== text) {
+                        element.replaceChild(document.createTextNode(replacedText), node);
+                    }
                 }
             }
         }
     }
 }
+changeTextOnPage();
